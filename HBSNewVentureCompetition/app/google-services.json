@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "356211828010",
+    "firebase_url": "https://hbs-new-venture-competition.firebaseio.com",
+    "project_id": "hbs-new-venture-competition",
+    "storage_bucket": "hbs-new-venture-competition.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356211828010:android:21c2b160fa30a6d7",
+        "android_client_info": {
+          "package_name": "org1hnvc.httpshbssup.hbsnewventurecompetition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356211828010-tki93hd0svfmjkrha6g8sgqt0t5sh5np.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpr4m6R0306hnpsXht6sZZ7Ig9zKZXF1k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
