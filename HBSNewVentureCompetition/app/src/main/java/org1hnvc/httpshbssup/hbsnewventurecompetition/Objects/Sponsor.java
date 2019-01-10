@@ -14,6 +14,8 @@ public class Sponsor {
     public String repLastName;
     public String repEmail;
 
+    public Sponsor() { }
+
     public Sponsor(String name, String description, String logoImageURL, String prize, URL website, String repProfileImageURL, String repFirstName, String repLastName, String repEmail){
         this.name = name;
         this.description = description;

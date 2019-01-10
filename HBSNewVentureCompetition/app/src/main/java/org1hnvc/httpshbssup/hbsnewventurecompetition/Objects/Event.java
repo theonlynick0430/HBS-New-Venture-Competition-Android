@@ -8,6 +8,8 @@ public class Event {
     public Timestamp time;
     public String description;
 
+    public Event() { }
+
     public Event(String eventID, Timestamp time, String description){
         this.eventID = eventID;
         this.time = time;

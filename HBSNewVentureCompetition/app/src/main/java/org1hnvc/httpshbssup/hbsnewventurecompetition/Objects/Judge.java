@@ -10,6 +10,8 @@ public class Judge {
     public URL linkedInURL;
     public String description;
 
+    public Judge() { }
+
     public Judge(String firstName, String lastName, String profileImageURL, URL linkedInURL, String description){
         this.firstName = firstName;
         this.lastName = lastName;

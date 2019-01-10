@@ -9,6 +9,8 @@ public class Company {
     public Integer order;
     public Double stars;
 
+    public Company() { }
+
     public Company(String companyID, String name, String description, String logoImageURL, Integer order, Double stars){
         this.companyID = companyID;
         this.name = name;

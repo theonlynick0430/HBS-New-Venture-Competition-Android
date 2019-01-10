@@ -13,6 +13,8 @@ public class CompanyMember {
     public String education;
     public String position;
 
+    public CompanyMember() { }
+
     public CompanyMember(String firstName, String lastName, String profileImageURL, String email, String phoneNumber, URL linkedInURL, String education, String position){
         this.firstName = firstName;
         this.lastName = lastName;

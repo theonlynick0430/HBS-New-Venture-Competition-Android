@@ -11,6 +11,8 @@ public class Coordinator {
     public String organization;
     public URL linkedInURL;
 
+    public Coordinator() { }
+
     public Coordinator(String firstName, String lastName, String profileImageURL, String position, String organization, URL linkedInURL){
         this.firstName = firstName;
         this.lastName = lastName;
