@@ -1,6 +1,6 @@
 package org1hnvc.httpshbssup.hbsnewventurecompetition.Objects;
 
-import java.security.Timestamp;
+import com.google.firebase.*;
 
 public class Event {
 
