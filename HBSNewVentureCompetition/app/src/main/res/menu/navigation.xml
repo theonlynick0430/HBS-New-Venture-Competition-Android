@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_program"
+        android:title="Program" />
+
+    <item
+        android:id="@+id/navigation_startups"
+        android:title="Startups" />
+
+    <item
+        android:id="@+id/navigation_judges"
+        android:title="Judges" />
+
+    <item
+        android:id="@+id/navigation_sponsors"
+        android:title="Sponsors" />
+
+    <item
+        android:id="@+id/navigation_coordinators"
+        android:title="Coordinators" />
+
+</menu>
