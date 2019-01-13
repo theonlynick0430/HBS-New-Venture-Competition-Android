@@ -57,7 +57,7 @@ public class FirebaseManager {
     }
 
 
-    private static FirebaseManager manager;
+    public static FirebaseManager manager = new FirebaseManager();
 
     // MARK: - Firestore References
 
@@ -67,13 +67,6 @@ public class FirebaseManager {
     private CollectionReference judges = FirebaseFirestore.getInstance().collection(NameFile.Firebase.JudgeDB.judges);
     private CollectionReference sponsors = FirebaseFirestore.getInstance().collection(NameFile.Firebase.SponsorDB.sponsors);
     private CollectionReference coordinators = FirebaseFirestore.getInstance().collection(NameFile.Firebase.CoordinatorDB.coordinators);
-
-    public static FirebaseManager getManager() {
-        if (manager == null) {
-            manager = new FirebaseManager();
-        }
-        return manager;
-    }
 
     // Manager Functions
 

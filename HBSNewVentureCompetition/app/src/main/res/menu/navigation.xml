@@ -3,22 +3,27 @@
 
     <item
         android:id="@+id/navigation_program"
+        android:icon="@drawable/events_icon"
         android:title="Program" />
 
     <item
         android:id="@+id/navigation_startups"
+        android:icon="@drawable/companies_icon"
         android:title="Startups" />
 
     <item
         android:id="@+id/navigation_judges"
+        android:icon="@drawable/judges_icon"
         android:title="Judges" />
 
     <item
         android:id="@+id/navigation_sponsors"
+        android:icon="@drawable/sponsors_icon"
         android:title="Sponsors" />
 
     <item
         android:id="@+id/navigation_coordinators"
+        android:icon="@drawable/coordinators_icon"
         android:title="Coordinators" />
 
 </menu>
