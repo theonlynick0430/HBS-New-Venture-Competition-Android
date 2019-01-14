@@ -9,11 +9,11 @@ public class Coordinator {
     public String profileImageURL;
     public String position;
     public String organization;
-    public URL linkedInURL;
+    public String linkedInURL;
 
     public Coordinator() { }
 
-    public Coordinator(String firstName, String lastName, String profileImageURL, String position, String organization, URL linkedInURL){
+    public Coordinator(String firstName, String lastName, String profileImageURL, String position, String organization, String linkedInURL){
         this.firstName = firstName;
         this.lastName = lastName;
         this.profileImageURL = profileImageURL;

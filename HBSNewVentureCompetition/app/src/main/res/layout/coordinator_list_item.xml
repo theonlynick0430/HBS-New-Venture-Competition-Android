@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="62dp"
+        android:layout_height="66dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="39dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Firstname Lastname"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/positionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some position at the company"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <TextView
+        android:id="@+id/organizationTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some organization"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <Button
+        android:id="@+id/linkedInBtn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="in"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="50dp" />
+</android.support.constraint.ConstraintLayout>

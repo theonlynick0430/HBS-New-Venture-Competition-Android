@@ -8,7 +8,7 @@ public class Sponsor {
     public String description;
     public String logoImageURL;
     public String prize;
-    public URL website;
+    public String website;
     public String repProfileImageURL;
     public String repFirstName;
     public String repLastName;
@@ -16,7 +16,7 @@ public class Sponsor {
 
     public Sponsor() { }
 
-    public Sponsor(String name, String description, String logoImageURL, String prize, URL website, String repProfileImageURL, String repFirstName, String repLastName, String repEmail){
+    public Sponsor(String name, String description, String logoImageURL, String prize, String website, String repProfileImageURL, String repFirstName, String repLastName, String repEmail){
         this.name = name;
         this.description = description;
         this.logoImageURL = logoImageURL;

@@ -9,13 +9,13 @@ public class CompanyMember {
     public String profileImageURL;
     public String email;
     public String phoneNumber;
-    public URL linkedInURL;
+    public String linkedInURL;
     public String education;
     public String position;
 
     public CompanyMember() { }
 
-    public CompanyMember(String firstName, String lastName, String profileImageURL, String email, String phoneNumber, URL linkedInURL, String education, String position){
+    public CompanyMember(String firstName, String lastName, String profileImageURL, String email, String phoneNumber, String linkedInURL, String education, String position){
         this.firstName = firstName;
         this.lastName = lastName;
         this.profileImageURL = profileImageURL;

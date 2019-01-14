@@ -6,12 +6,12 @@ public class Company {
     public String name;
     public String description;
     public String logoImageURL;
-    public Integer order;
+    public Double order;
     public Double stars;
 
     public Company() { }
 
-    public Company(String companyID, String name, String description, String logoImageURL, Integer order, Double stars){
+    public Company(String companyID, String name, String description, String logoImageURL, Double order, Double stars){
         this.companyID = companyID;
         this.name = name;
         this.description = description;
