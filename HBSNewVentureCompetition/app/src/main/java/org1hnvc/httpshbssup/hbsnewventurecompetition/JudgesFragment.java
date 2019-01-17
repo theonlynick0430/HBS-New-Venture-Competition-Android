@@ -19,6 +19,7 @@ public class JudgesFragment extends Fragment {
 
     private List<Judge> judges;
     private ListView listView;
+    private  JudgeAdapter judgeAdapter;
 
     @Nullable
     @Override
@@ -26,13 +27,14 @@ public class JudgesFragment extends Fragment {
 
         judges = new ArrayList<>();
 
-        listView = getView().findViewById(R.id.listView);
-        JudgeAdapter judgeAdapter = new JudgeAdapter(getActivity().getApplicationContext(), R.layout.judge_list_item, judges);
+        View rootView = inflater.inflate(R.layout.fragment_judges, container, false);
+        listView = rootView.findViewById(R.id.listView);
+        judgeAdapter = new JudgeAdapter(getActivity().getApplicationContext(), R.layout.judge_list_item, judges);
         listView.setAdapter(judgeAdapter);
 
         fetchJudges();
 
-        return inflater.inflate(R.layout.fragment_judges, null);
+        return rootView;
     }
 
     private void fetchJudges(){
@@ -54,6 +56,7 @@ public class JudgesFragment extends Fragment {
         this.judges.clear();
         for(Judge judge: judges){
             this.judges.add(judge);
+            judgeAdapter.notifyDataSetChanged();
         }
     }
 

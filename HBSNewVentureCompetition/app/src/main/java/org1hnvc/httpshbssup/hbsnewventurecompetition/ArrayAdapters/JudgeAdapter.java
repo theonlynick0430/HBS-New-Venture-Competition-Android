@@ -49,7 +49,8 @@ public class JudgeAdapter extends ArrayAdapter<Judge> {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(judge.linkedInURL));
-                view.getContext().startActivity(browserIntent);
+                browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mCtx.startActivity(browserIntent);
             }
         });
         AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView);
@@ -58,4 +59,8 @@ public class JudgeAdapter extends ArrayAdapter<Judge> {
         return view;
     }
 
+    @Override
+    public int getCount() {
+        return judgeList.size();
+    }
 }

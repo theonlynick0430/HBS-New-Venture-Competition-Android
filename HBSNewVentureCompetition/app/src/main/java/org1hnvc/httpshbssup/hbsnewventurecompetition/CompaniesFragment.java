@@ -19,6 +19,7 @@ public class CompaniesFragment extends Fragment {
 
     private List<Company> companies;
     private ListView listView;
+    private  CompanyAdapter companyAdapter;
 
     @Nullable
     @Override
@@ -26,13 +27,14 @@ public class CompaniesFragment extends Fragment {
 
         companies = new ArrayList<>();
 
-        listView = getView().findViewById(R.id.listView);
-        CompanyAdapter companyAdapter = new CompanyAdapter(getActivity().getApplicationContext(), R.layout.company_list_item, companies);
+        View rootView = inflater.inflate(R.layout.fragment_companies, container, false);
+        listView = rootView.findViewById(R.id.listView);
+        companyAdapter = new CompanyAdapter(getActivity().getApplicationContext(), R.layout.company_list_item, companies);
         listView.setAdapter(companyAdapter);
 
         fetchCompanies();
 
-        return inflater.inflate(R.layout.fragment_companies, null);
+        return rootView;
     }
 
     private void fetchCompanies(){
@@ -54,6 +56,7 @@ public class CompaniesFragment extends Fragment {
         this.companies.clear();
         for(Company company: companies){
             this.companies.add(company);
+            companyAdapter.notifyDataSetChanged();
         }
     }
 

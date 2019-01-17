@@ -19,6 +19,7 @@ public class SponsorsFragment extends Fragment {
 
     private List<Sponsor> sponsors;
     private ListView listView;
+    private  SponsorAdapter sponsorAdapter;
 
     @Nullable
     @Override
@@ -26,13 +27,14 @@ public class SponsorsFragment extends Fragment {
 
         sponsors = new ArrayList<>();
 
-        listView = getView().findViewById(R.id.listView);
-        SponsorAdapter sponsorAdapter = new SponsorAdapter(getActivity().getApplicationContext(), R.layout.sponsor_list_item, sponsors);
+        View rootView = inflater.inflate(R.layout.fragment_sponsors, container, false);
+        listView = rootView.findViewById(R.id.listView);
+        sponsorAdapter = new SponsorAdapter(getActivity().getApplicationContext(), R.layout.sponsor_list_item, sponsors);
         listView.setAdapter(sponsorAdapter);
 
         fetchSponsors();
 
-        return inflater.inflate(R.layout.fragment_sponsors, null);
+        return rootView;
     }
 
     private void fetchSponsors(){
@@ -54,6 +56,7 @@ public class SponsorsFragment extends Fragment {
         this.sponsors.clear();
         for(Sponsor sponsor: sponsors){
             this.sponsors.add(sponsor);
+            sponsorAdapter.notifyDataSetChanged();
         }
     }
 

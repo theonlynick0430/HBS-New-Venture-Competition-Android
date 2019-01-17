@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters.EventAdapter;
@@ -20,6 +19,7 @@ public class EventsFragment extends Fragment {
 
     private List<Event> events;
     private ListView listView;
+    private EventAdapter eventAdapter;
 
     @Nullable
     @Override
@@ -27,13 +27,14 @@ public class EventsFragment extends Fragment {
 
         events = new ArrayList<>();
 
-        listView = getView().findViewById(R.id.listView);
-        EventAdapter eventAdapter = new EventAdapter(getActivity().getApplicationContext(), R.layout.event_list_item, events);
+        View rootView = inflater.inflate(R.layout.fragment_events, container, false);
+        listView = rootView.findViewById(R.id.listView);
+        eventAdapter = new EventAdapter(getActivity(), R.layout.event_list_item, events);
         listView.setAdapter(eventAdapter);
 
         fetchEvents();
 
-        return inflater.inflate(R.layout.fragment_events, null);
+        return rootView;
     }
 
     private void fetchEvents(){
@@ -55,6 +56,7 @@ public class EventsFragment extends Fragment {
         this.events.clear();
         for(Event event: events){
             this.events.add(event);
+            eventAdapter.notifyDataSetChanged();
         }
     }
 

@@ -2,7 +2,6 @@ package org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters;
 
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Objects.Event;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.R;
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -45,4 +44,10 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
         return view;
     }
+
+    @Override
+    public int getCount() {
+        return eventList.size();
+    }
+
 }

@@ -1,7 +1,5 @@
 package org1hnvc.httpshbssup.hbsnewventurecompetition.Objects;
 
-import java.net.URL;
-
 public class CompanyMember {
 
     public String firstName;
@@ -12,8 +10,6 @@ public class CompanyMember {
     public String linkedInURL;
     public String education;
     public String position;
-
-    public CompanyMember() { }
 
     public CompanyMember(String firstName, String lastName, String profileImageURL, String email, String phoneNumber, String linkedInURL, String education, String position){
         this.firstName = firstName;

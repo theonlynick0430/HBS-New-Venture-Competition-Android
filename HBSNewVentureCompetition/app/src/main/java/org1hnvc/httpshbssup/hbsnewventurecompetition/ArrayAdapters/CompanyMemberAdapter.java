@@ -12,8 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.net.URI;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.AsyncImageTask;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Objects.CompanyMember;
@@ -71,6 +69,11 @@ public class CompanyMemberAdapter extends ArrayAdapter<CompanyMember> {
         asyncImageTask.execute(companyMember.profileImageURL);
 
         return view;
+    }
+
+    @Override
+    public int getCount() {
+        return companyMemberList.size();
     }
 
 }

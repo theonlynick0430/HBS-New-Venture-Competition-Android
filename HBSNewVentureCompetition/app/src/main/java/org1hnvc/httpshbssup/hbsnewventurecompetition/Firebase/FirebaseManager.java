@@ -1,11 +1,11 @@
 package org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase;
 
 import android.support.annotation.NonNull;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.*;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.NameFile;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Objects.*;
@@ -99,7 +99,12 @@ public class FirebaseManager {
                     Company[] companies = new Company[task.getResult().size()];
                     int index = 0;
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        Company company = document.toObject(Company.class);
+                        String name = document.getString(NameFile.Firebase.CompanyDB.name);
+                        String description = document.getString(NameFile.Firebase.CompanyDB.description);
+                        String logoImageURL = document.getString(NameFile.Firebase.CompanyDB.logoImageURL);
+                        Double order = document.getDouble(NameFile.Firebase.CompanyDB.order);
+                        Double stars = document.getDouble(NameFile.Firebase.CompanyDB.stars);
+                        Company company = new Company(document.getId(), name, description, logoImageURL, order, stars);
                         companies[index] = company;
                         index++;
                     }
@@ -159,7 +164,15 @@ public class FirebaseManager {
                     CompanyMember[] companyMembers = new CompanyMember[task.getResult().size()];
                     int index = 0;
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        CompanyMember companyMember = document.toObject(CompanyMember.class);
+                        String firstName = document.getString(NameFile.Firebase.CompanyDB.firstName);
+                        String lastName = document.getString(NameFile.Firebase.CompanyDB.lastName);
+                        String profileImageURL = document.getString(NameFile.Firebase.CompanyDB.profileImageURL);
+                        String email = document.getString(NameFile.Firebase.CompanyDB.email);
+                        String phoneNumber = document.getString(NameFile.Firebase.CompanyDB.phoneNumber);
+                        String linkedInURL = document.getString(NameFile.Firebase.CompanyDB.linkedInURL);
+                        String education = document.getString(NameFile.Firebase.CompanyDB.education);
+                        String position = document.getString(NameFile.Firebase.CompanyDB.position);
+                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position);
                         companyMembers[index] = companyMember;
                         index++;
                     }
@@ -195,12 +208,16 @@ public class FirebaseManager {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    Event[] events = new Event[task.getResult().size()];
+                    Event[] events = new Event[task.getResult().size()-1];
                     int index = 0;
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        Event event = document.toObject(Event.class);
-                        events[index] = event;
-                        index++;
+                        if (!document.getId().equals("CurrentEvent")){
+                            Timestamp time = document.getTimestamp(NameFile.Firebase.EventDB.time);
+                            String description = document.getString(NameFile.Firebase.EventDB.description);
+                            Event event = new Event(document.getId(), time, description);
+                            events[index] = event;
+                            index++;
+                        }
                     }
                     callback.onSuccess(events);
                 } else {
@@ -239,7 +256,12 @@ public class FirebaseManager {
                     Judge[] judges = new Judge[task.getResult().size()];
                     int index = 0;
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        Judge judge = document.toObject(Judge.class);
+                        String firstName = document.getString(NameFile.Firebase.JudgeDB.firstName);
+                        String lastName = document.getString(NameFile.Firebase.JudgeDB.lastName);
+                        String profileImageURL = document.getString(NameFile.Firebase.JudgeDB.profileImageURL);
+                        String linkedInURL = document.getString(NameFile.Firebase.JudgeDB.linkedInURL);
+                        String description = document.getString(NameFile.Firebase.JudgeDB.description);
+                        Judge judge =  new Judge(firstName, lastName, profileImageURL, linkedInURL, description);
                         judges[index] = judge;
                         index++;
                     }
@@ -260,7 +282,16 @@ public class FirebaseManager {
                     Sponsor[] sponsors = new Sponsor[task.getResult().size()];
                     int index = 0;
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        Sponsor sponsor = document.toObject(Sponsor.class);
+                        String name = document.getString(NameFile.Firebase.SponsorDB.name);
+                        String description = document.getString(NameFile.Firebase.SponsorDB.description);
+                        String logoImageURL = document.getString(NameFile.Firebase.SponsorDB.logoImageURL);
+                        String prize = document.getString(NameFile.Firebase.SponsorDB.prize);
+                        String website = document.getString(NameFile.Firebase.SponsorDB.website);
+                        String repProfileImageURL = document.getString(NameFile.Firebase.SponsorDB.repProfileImageURL);
+                        String repFirstName = document.getString(NameFile.Firebase.SponsorDB.repFirstName);
+                        String repLastName = document.getString(NameFile.Firebase.SponsorDB.repLastName);
+                        String repEmail = document.getString(NameFile.Firebase.SponsorDB.repEmail);
+                        Sponsor sponsor = new Sponsor(name, description, logoImageURL, prize, website, repProfileImageURL, repFirstName, repLastName, repEmail);
                         sponsors[index] = sponsor;
                         index++;
                     }
@@ -281,7 +312,13 @@ public class FirebaseManager {
                     Coordinator[] coordinators = new Coordinator[task.getResult().size()];
                     int index = 0;
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        Coordinator coordinator = document.toObject(Coordinator.class);
+                        String firstName = document.getString(NameFile.Firebase.CoordinatorDB.firstName);
+                        String lastName = document.getString(NameFile.Firebase.CoordinatorDB.lastName);
+                        String profileImageURL = document.getString(NameFile.Firebase.CoordinatorDB.profileImageURL);
+                        String position = document.getString(NameFile.Firebase.CoordinatorDB.position);
+                        String organization = document.getString(NameFile.Firebase.CoordinatorDB.organization);
+                        String linkedInURL = document.getString(NameFile.Firebase.CoordinatorDB.linkedInURL);
+                        Coordinator coordinator = new Coordinator(firstName, lastName, profileImageURL, position, organization, linkedInURL);
                         coordinators[index] = coordinator;
                         index++;
                     }

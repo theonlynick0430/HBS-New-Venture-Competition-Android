@@ -19,6 +19,7 @@ public class CoordinatorsFragment extends Fragment {
 
     private List<Coordinator> coordinators;
     private ListView listView;
+    private CoordinatorAdapter coordinatorAdapter;
 
     @Nullable
     @Override
@@ -26,13 +27,14 @@ public class CoordinatorsFragment extends Fragment {
 
         coordinators = new ArrayList<>();
 
-        listView = getView().findViewById(R.id.listView);
-        CoordinatorAdapter coordinatorAdapter = new CoordinatorAdapter(getActivity().getApplicationContext(), R.layout.coordinator_list_item, coordinators);
+        View rootView = inflater.inflate(R.layout.fragment_coordinators, container, false);
+        listView = rootView.findViewById(R.id.listView);
+        coordinatorAdapter = new CoordinatorAdapter(getActivity().getApplicationContext(), R.layout.coordinator_list_item, coordinators);
         listView.setAdapter(coordinatorAdapter);
 
         fetchCoordinators();
 
-        return inflater.inflate(R.layout.fragment_coordinators, null);
+        return rootView;
     }
 
     private void fetchCoordinators(){
@@ -54,6 +56,7 @@ public class CoordinatorsFragment extends Fragment {
         this.coordinators.clear();
         for(Coordinator coordinator: coordinators){
             this.coordinators.add(coordinator);
+            coordinatorAdapter.notifyDataSetChanged();
         }
     }
 

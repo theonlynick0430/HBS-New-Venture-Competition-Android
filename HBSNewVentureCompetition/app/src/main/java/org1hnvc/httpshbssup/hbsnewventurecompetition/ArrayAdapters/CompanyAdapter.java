@@ -46,4 +46,9 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
         return view;
     }
 
+    @Override
+    public int getCount() {
+        return companyList.size();
+    }
+
 }

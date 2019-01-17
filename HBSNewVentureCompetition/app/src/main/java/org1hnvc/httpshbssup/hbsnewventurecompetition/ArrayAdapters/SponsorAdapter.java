@@ -49,13 +49,19 @@ public class SponsorAdapter extends ArrayAdapter<Sponsor> {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(sponsor.website));
-                view.getContext().startActivity(browserIntent);
+                browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mCtx.startActivity(browserIntent);
             }
         });
         AsyncImageTask asyncImageTask = new AsyncImageTask(logoImageView);
         asyncImageTask.execute(sponsor.logoImageURL);
 
         return view;
+    }
+
+    @Override
+    public int getCount() {
+        return sponsorList.size();
     }
 
 }

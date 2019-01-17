@@ -1,7 +1,5 @@
 package org1hnvc.httpshbssup.hbsnewventurecompetition.Objects;
 
-import java.net.URL;
-
 public class Sponsor {
 
     public String name;
@@ -13,8 +11,6 @@ public class Sponsor {
     public String repFirstName;
     public String repLastName;
     public String repEmail;
-
-    public Sponsor() { }
 
     public Sponsor(String name, String description, String logoImageURL, String prize, String website, String repProfileImageURL, String repFirstName, String repLastName, String repEmail){
         this.name = name;
