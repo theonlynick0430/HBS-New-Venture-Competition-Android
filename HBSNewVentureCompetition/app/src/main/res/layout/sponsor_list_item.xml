@@ -8,33 +8,50 @@
 
     <ImageView
         android:id="@+id/logoImageView"
-        android:layout_width="75dp"
-        android:layout_height="83dp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="40dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/nameTV"
-        android:layout_width="wrap_content"
+        android:layout_width="282dp"
         android:layout_height="wrap_content"
         android:text="Sponsor Company Name"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="47dp" />
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp"
+        app:fontFamily="sans-serif-medium"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="30dp" />
 
     <TextView
         android:id="@+id/descriptionTV"
-        android:layout_width="323dp"
-        android:layout_height="110dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp"
         android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="141dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/logoImageView"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/websiteBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="https://www.companyname.com"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="82dp" />
+        app:layout_constraintEnd_toEndOf="@+id/nameTV"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameTV"
+        app:layout_constraintTop_toBottomOf="@+id/nameTV" />
 </android.support.constraint.ConstraintLayout>
