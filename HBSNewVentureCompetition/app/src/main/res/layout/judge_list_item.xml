@@ -30,7 +30,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:text=" Firstname Lastname"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         app:fontFamily="sans-serif-medium"
         app:layout_constraintEnd_toStartOf="@+id/linkedInBtn"
@@ -61,10 +61,11 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:background="@color/design_default_color_primary"
+        android:background="@color/linkedin"
         android:text="in"
         android:textColor="@android:color/background_light"
-        android:typeface="monospace"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profileImageView" />
 </android.support.constraint.ConstraintLayout>

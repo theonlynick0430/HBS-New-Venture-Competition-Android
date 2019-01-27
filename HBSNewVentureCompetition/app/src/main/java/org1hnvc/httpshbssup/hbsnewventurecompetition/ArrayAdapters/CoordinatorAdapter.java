@@ -55,7 +55,7 @@ public class CoordinatorAdapter extends ArrayAdapter<Coordinator> {
                 mCtx.startActivity(browserIntent);
             }
         });
-        AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView);
+        AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView, true);
         asyncImageTask.execute(coordinator.profileImageURL);
 
         return view;

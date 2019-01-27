@@ -2,9 +2,13 @@ package org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +57,7 @@ public class JudgeAdapter extends ArrayAdapter<Judge> {
                 mCtx.startActivity(browserIntent);
             }
         });
-        AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView);
+        AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView, true);
         asyncImageTask.execute(judge.profileImageURL);
 
         return view;

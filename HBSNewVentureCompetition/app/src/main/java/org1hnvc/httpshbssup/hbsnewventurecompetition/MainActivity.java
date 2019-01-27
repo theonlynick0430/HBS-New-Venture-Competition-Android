@@ -9,6 +9,12 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    EventsFragment eventsFragment;
+    CompaniesFragment companiesFragment;
+    JudgesFragment judgesFragment;
+    SponsorsFragment sponsorsFragment;
+    CoordinatorsFragment coordinatorsFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +23,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigationView = findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-        loadFragment(new EventsFragment(), "Program");
+        eventsFragment = new EventsFragment();
+        companiesFragment = new CompaniesFragment();
+        judgesFragment = new JudgesFragment();
+        sponsorsFragment = new SponsorsFragment();
+        coordinatorsFragment = new CoordinatorsFragment();
+
+        loadFragment(eventsFragment, "Program");
     }
 
     private boolean loadFragment(Fragment fragment, String title){
@@ -41,23 +53,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (menuItem.getItemId()){
             case R.id.navigation_program:
-                fragment = new EventsFragment();
+                fragment = eventsFragment;
                 title = "Program";
                 break;
             case R.id.navigation_startups:
-                fragment = new CompaniesFragment();
+                fragment = companiesFragment;
                 title = "Startups";
                 break;
             case R.id.navigation_judges:
-                fragment = new JudgesFragment();
+                fragment = judgesFragment;
                 title = "Judges";
                 break;
             case R.id.navigation_sponsors:
-                fragment = new SponsorsFragment();
+                fragment = sponsorsFragment;
                 title = "Sponsors";
                 break;
             case R.id.navigation_coordinators:
-                fragment = new CoordinatorsFragment();
+                fragment = coordinatorsFragment;
                 title = "Coordinators";
                 break;
         }

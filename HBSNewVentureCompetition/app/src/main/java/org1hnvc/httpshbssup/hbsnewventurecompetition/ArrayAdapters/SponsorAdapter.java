@@ -40,11 +40,13 @@ public class SponsorAdapter extends ArrayAdapter<Sponsor> {
         View view = inflater.inflate(resource, null);
         TextView nameTV = view.findViewById(R.id.nameTV);
         TextView descriptionTV = view.findViewById(R.id.descriptionTV);
+        TextView prizeTV = view.findViewById(R.id.prizeTV);
         Button websiteBtn = view.findViewById(R.id.websiteBtn);
         ImageView logoImageView = view.findViewById(R.id.logoImageView);
 
         nameTV.setText(sponsor.name);
         descriptionTV.setText(sponsor.description);
+        prizeTV.setText(sponsor.prize);
         websiteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
