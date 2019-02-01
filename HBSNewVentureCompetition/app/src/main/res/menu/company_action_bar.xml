@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/company_action_bar_search"
+        android:icon="@drawable/search_action_bar_item"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/company_action_bar_number"
+        android:icon="@drawable/number_action_bar_item"
+        android:title="Select" />
+
+    <item
+        android:id="@+id/company_action_bar_vote"
+        android:icon="@drawable/vote_action_bar_item"
+        android:title="Vote" />
+
+</menu>
