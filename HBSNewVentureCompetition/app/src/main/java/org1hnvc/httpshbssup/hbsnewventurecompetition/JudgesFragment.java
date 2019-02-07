@@ -21,9 +21,17 @@ public class JudgesFragment extends Fragment {
     private ListView listView;
     private  JudgeAdapter judgeAdapter;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+        System.out.println("ON CREATE");
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        System.out.println("ON CREATE VIEW");
 
         judges = new ArrayList<>();
 

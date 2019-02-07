@@ -172,7 +172,8 @@ public class FirebaseManager {
                         String linkedInURL = document.getString(NameFile.Firebase.CompanyDB.linkedInURL);
                         String education = document.getString(NameFile.Firebase.CompanyDB.education);
                         String position = document.getString(NameFile.Firebase.CompanyDB.position);
-                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position);
+                        String website = document.getString(NameFile.Firebase.CompanyDB.website);
+                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position, website);
                         companyMembers[index] = companyMember;
                         index++;
                     }

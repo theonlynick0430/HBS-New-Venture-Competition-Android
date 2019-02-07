@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/company_action_bar_search"
-        android:icon="@drawable/search_action_bar_item"
-        android:title="Search" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/company_action_bar_number"
+        app:showAsAction="always"
         android:icon="@drawable/number_action_bar_item"
         android:title="Select" />
 
     <item
         android:id="@+id/company_action_bar_vote"
+        app:showAsAction="always"
         android:icon="@drawable/vote_action_bar_item"
         android:title="Vote" />
 

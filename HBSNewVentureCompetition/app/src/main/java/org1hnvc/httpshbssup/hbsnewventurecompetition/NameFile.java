@@ -31,6 +31,7 @@ public class NameFile {
             public static String linkedInURL = "LinkedInURL";
             public static String education = "Education";
             public static String position = "Position";
+            public static String website = "Website";
                     //notes <collection>
             public static String notes = "Notes";
                         //note <document> - deviceID

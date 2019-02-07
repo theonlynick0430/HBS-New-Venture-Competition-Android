@@ -18,4 +18,8 @@ public class Company {
         this.stars = stars;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

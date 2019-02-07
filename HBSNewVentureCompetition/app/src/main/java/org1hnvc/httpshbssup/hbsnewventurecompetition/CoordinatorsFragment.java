@@ -32,7 +32,7 @@ public class CoordinatorsFragment extends Fragment {
         coordinatorAdapter = new CoordinatorAdapter(getActivity().getApplicationContext(), R.layout.coordinator_list_item, coordinators);
         listView.setAdapter(coordinatorAdapter);
 
-        fetchCoordinators();
+//        fetchCoordinators();
 
         return rootView;
     }

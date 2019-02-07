@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         sponsorsFragment = new SponsorsFragment();
         coordinatorsFragment = new CoordinatorsFragment();
 
-        loadFragment(eventsFragment, "Program");
+        loadFragment(eventsFragment, "Schedule");
     }
 
     private boolean loadFragment(Fragment fragment, String title){
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (menuItem.getItemId()){
             case R.id.navigation_program:
                 fragment = eventsFragment;
-                title = "Program";
+                title = "Schedule";
                 break;
             case R.id.navigation_startups:
                 fragment = companiesFragment;
