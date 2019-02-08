@@ -20,29 +20,25 @@ public class JudgesFragment extends Fragment {
     private List<Judge> judges;
     private ListView listView;
     private  JudgeAdapter judgeAdapter;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRetainInstance(true);
-        System.out.println("ON CREATE");
-    }
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        System.out.println("ON CREATE VIEW");
-
-        judges = new ArrayList<>();
+        if (view != null){
+            return  view;
+        }
 
         View rootView = inflater.inflate(R.layout.fragment_judges, container, false);
+        judges = new ArrayList<>();
         listView = rootView.findViewById(R.id.listView);
         judgeAdapter = new JudgeAdapter(getActivity().getApplicationContext(), R.layout.judge_list_item, judges);
         listView.setAdapter(judgeAdapter);
+        view = rootView;
 
         fetchJudges();
 
-        return rootView;
+        return view;
     }
 
     private void fetchJudges(){

@@ -20,10 +20,14 @@ public class SponsorsFragment extends Fragment {
     private List<Sponsor> sponsors;
     private ListView listView;
     private  SponsorAdapter sponsorAdapter;
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (view != null){
+            return  view;
+        }
 
         sponsors = new ArrayList<>();
 
@@ -31,10 +35,11 @@ public class SponsorsFragment extends Fragment {
         listView = rootView.findViewById(R.id.listView);
         sponsorAdapter = new SponsorAdapter(getActivity().getApplicationContext(), R.layout.sponsor_list_item, sponsors);
         listView.setAdapter(sponsorAdapter);
+        view = rootView;
 
         fetchSponsors();
 
-        return rootView;
+        return view;
     }
 
     private void fetchSponsors(){

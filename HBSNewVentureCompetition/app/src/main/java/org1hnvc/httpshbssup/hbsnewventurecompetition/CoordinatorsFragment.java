@@ -20,10 +20,14 @@ public class CoordinatorsFragment extends Fragment {
     private List<Coordinator> coordinators;
     private ListView listView;
     private CoordinatorAdapter coordinatorAdapter;
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (view != null){
+            return  view;
+        }
 
         coordinators = new ArrayList<>();
 
@@ -31,10 +35,11 @@ public class CoordinatorsFragment extends Fragment {
         listView = rootView.findViewById(R.id.listView);
         coordinatorAdapter = new CoordinatorAdapter(getActivity().getApplicationContext(), R.layout.coordinator_list_item, coordinators);
         listView.setAdapter(coordinatorAdapter);
+        view = rootView;
 
-//        fetchCoordinators();
+        fetchCoordinators();
 
-        return rootView;
+        return view;
     }
 
     private void fetchCoordinators(){

@@ -25,6 +25,7 @@ public class EventsFragment extends Fragment {
     private List<Event> events;
     private ListView listView;
     private EventAdapter eventAdapter;
+    private View view;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,9 @@ public class EventsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (view != null){
+            return  view;
+        }
 
         events = new ArrayList<>();
 
@@ -42,10 +46,11 @@ public class EventsFragment extends Fragment {
         listView = rootView.findViewById(R.id.listView);
         eventAdapter = new EventAdapter(getActivity(), R.layout.event_list_item, events);
         listView.setAdapter(eventAdapter);
+        view = rootView;
 
         fetchEvents();
 
-        return rootView;
+        return view;
     }
 
     @Override

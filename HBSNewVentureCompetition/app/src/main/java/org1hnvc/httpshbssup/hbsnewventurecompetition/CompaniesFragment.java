@@ -32,6 +32,7 @@ public class CompaniesFragment extends Fragment {
     private ListView listView;
     private EditText searchView;
     private  CompanyAdapter companyAdapter;
+    private View view;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +43,9 @@ public class CompaniesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (view != null){
+            return  view;
+        }
 
         companies = new ArrayList<>();
 
@@ -50,6 +54,7 @@ public class CompaniesFragment extends Fragment {
         searchView = rootView.findViewById(R.id.searchView);
         companyAdapter = new CompanyAdapter(getActivity().getApplicationContext(), R.layout.company_list_item, companies);
         listView.setAdapter(companyAdapter);
+        view = rootView;
 
         searchView.addTextChangedListener(new TextWatcher() {
             @Override
@@ -73,7 +78,7 @@ public class CompaniesFragment extends Fragment {
 
         fetchCompanies();
 
-        return rootView;
+        return view;
     }
 
     @Override
