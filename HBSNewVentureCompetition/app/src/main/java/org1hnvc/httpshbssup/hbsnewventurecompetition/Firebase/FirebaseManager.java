@@ -36,7 +36,7 @@ public class FirebaseManager {
         void onError(String error);
     }
     public interface CompanyMemberCallback {
-        void onSuccess(CompanyMember[] companies);
+        void onSuccess(CompanyMember[] companyMembers);
         void onError(String error);
     }
     public interface EventCallback {
@@ -104,7 +104,8 @@ public class FirebaseManager {
                         String logoImageURL = document.getString(NameFile.Firebase.CompanyDB.logoImageURL);
                         Double order = document.getDouble(NameFile.Firebase.CompanyDB.order);
                         Double stars = document.getDouble(NameFile.Firebase.CompanyDB.stars);
-                        Company company = new Company(document.getId(), name, description, logoImageURL, order, stars);
+                        String website = document.getString(NameFile.Firebase.CompanyDB.website);
+                        Company company = new Company(document.getId(), name, description, logoImageURL, order, stars, website);
                         companies[index] = company;
                         index++;
                     }
@@ -172,8 +173,7 @@ public class FirebaseManager {
                         String linkedInURL = document.getString(NameFile.Firebase.CompanyDB.linkedInURL);
                         String education = document.getString(NameFile.Firebase.CompanyDB.education);
                         String position = document.getString(NameFile.Firebase.CompanyDB.position);
-                        String website = document.getString(NameFile.Firebase.CompanyDB.website);
-                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position, website);
+                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position);
                         companyMembers[index] = companyMember;
                         index++;
                     }

@@ -10,9 +10,8 @@ public class CompanyMember {
     public String linkedInURL;
     public String education;
     public String position;
-    public String website;
 
-    public CompanyMember(String firstName, String lastName, String profileImageURL, String email, String phoneNumber, String linkedInURL, String education, String position, String website){
+    public CompanyMember(String firstName, String lastName, String profileImageURL, String email, String phoneNumber, String linkedInURL, String education, String position){
         this.firstName = firstName;
         this.lastName = lastName;
         this.profileImageURL = profileImageURL;
@@ -21,7 +20,6 @@ public class CompanyMember {
         this.linkedInURL = linkedInURL;
         this.education = education;
         this.position = position;
-        this.website = website;
     }
 
 }

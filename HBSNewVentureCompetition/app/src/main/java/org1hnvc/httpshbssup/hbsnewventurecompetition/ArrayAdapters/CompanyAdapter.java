@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.AsyncImageTask;
@@ -71,11 +70,6 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
         };
     }
 
-    @Override
-    public int getCount() {
-        return displayedList.size();
-    }
-
     private List<Company> getFilteredCompanies(final CharSequence charSequence){
         List<Company> filteredCompanies = new ArrayList<>();
         for (Company company: companyList) {
@@ -84,6 +78,11 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
             }
         }
         return filteredCompanies;
+    }
+
+    @Override
+    public int getCount() {
+        return displayedList.size();
     }
 
 }

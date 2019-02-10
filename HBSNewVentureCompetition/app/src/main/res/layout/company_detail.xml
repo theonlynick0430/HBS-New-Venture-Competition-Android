@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/instructionsTV"
+        android:layout_width="225dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:text="Rate based on creativity, uniqueness, and investibility"
+        app:layout_constraintStart_toEndOf="@+id/logoImageView"
+        app:layout_constraintTop_toTopOf="@+id/logoImageView" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@android:style/Widget.Holo.RatingBar.Indicator"
+        android:layout_width="170dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:numStars="5"
+        app:layout_constraintStart_toStartOf="@+id/instructionsTV"
+        app:layout_constraintTop_toBottomOf="@+id/instructionsTV" />
+
+    <Button
+        android:id="@+id/notesBtn"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Notes"
+        app:layout_constraintStart_toStartOf="@+id/instructionsTV"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <Button
+        android:id="@+id/websiteBtn"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Website"
+        app:layout_constraintStart_toEndOf="@+id/notesBtn"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <TextView
+        android:id="@+id/descriptionTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/logoImageView"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTV" />
+</android.support.constraint.ConstraintLayout>
