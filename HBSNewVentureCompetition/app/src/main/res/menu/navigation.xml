@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_program"
-        android:icon="@drawable/events_icon"
-        android:title="Program" />
-
-    <item
         android:id="@+id/navigation_startups"
         android:icon="@drawable/companies_icon"
         android:title="Startups" />
+
+    <item
+        android:id="@+id/navigation_program"
+        android:icon="@drawable/events_icon"
+        android:title="Program" />
 
     <item
         android:id="@+id/navigation_judges"

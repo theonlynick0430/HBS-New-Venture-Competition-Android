@@ -103,9 +103,8 @@ public class FirebaseManager {
                         String description = document.getString(NameFile.Firebase.CompanyDB.description);
                         String logoImageURL = document.getString(NameFile.Firebase.CompanyDB.logoImageURL);
                         Double order = document.getDouble(NameFile.Firebase.CompanyDB.order);
-                        Double stars = document.getDouble(NameFile.Firebase.CompanyDB.stars);
                         String website = document.getString(NameFile.Firebase.CompanyDB.website);
-                        Company company = new Company(document.getId(), name, description, logoImageURL, order, stars, website);
+                        Company company = new Company(document.getId(), name, description, logoImageURL, order, website);
                         companies[index] = company;
                         index++;
                     }
@@ -129,7 +128,7 @@ public class FirebaseManager {
                         String notes = document.getString(NameFile.Firebase.CompanyDB.note);
                         callback.onSuccess(notes);
                     } else {
-                        callback.onError("No such document");
+                        callback.onSuccess("");
                     }
                 } else {
                     callback.onError(task.getException().getMessage());

@@ -87,7 +87,6 @@ public class CompaniesFragment extends Fragment {
                 b.putParcelable("Company", companies.get(i));
                 intent.putExtras(b);
                 startActivity(intent);
-                getActivity().finish();
             }
         });
 
@@ -129,7 +128,6 @@ public class CompaniesFragment extends Fragment {
                 b.putParcelable("Company", companies.get(which));
                 intent.putExtras(b);
                 startActivity(intent);
-                getActivity().finish();
             }
         });
         AlertDialog dialog = builder.create();

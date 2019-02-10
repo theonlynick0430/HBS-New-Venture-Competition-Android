@@ -10,8 +10,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    EventsFragment eventsFragment;
     CompaniesFragment companiesFragment;
+    EventsFragment eventsFragment;
     JudgesFragment judgesFragment;
     SponsorsFragment sponsorsFragment;
     CoordinatorsFragment coordinatorsFragment;
@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigationView = findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-        eventsFragment = new EventsFragment();
         companiesFragment = new CompaniesFragment();
+        eventsFragment = new EventsFragment();
         judgesFragment = new JudgesFragment();
         sponsorsFragment = new SponsorsFragment();
         coordinatorsFragment = new CoordinatorsFragment();
 
-        loadFragment(eventsFragment, "Schedule");
+        loadFragment(companiesFragment, "Startups");
     }
 
     private boolean loadFragment(Fragment fragment, String title){
@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         String title = "";
 
         switch (menuItem.getItemId()){
-            case R.id.navigation_program:
-                fragment = eventsFragment;
-                title = "Schedule";
-                break;
             case R.id.navigation_startups:
                 fragment = companiesFragment;
                 title = "Startups";
+                break;
+            case R.id.navigation_program:
+                fragment = eventsFragment;
+                title = "Schedule";
                 break;
             case R.id.navigation_judges:
                 fragment = judgesFragment;

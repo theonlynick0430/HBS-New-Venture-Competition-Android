@@ -68,7 +68,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:text="Graduate from Harvard Law"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/linkedInBtn"
@@ -81,11 +81,12 @@
         android:id="@+id/phoneBtn"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/phone_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nameTV" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/linkedInBtn"

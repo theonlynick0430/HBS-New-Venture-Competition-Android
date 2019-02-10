@@ -36,6 +36,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:numStars="5"
+        android:stepSize="1"
+        android:isIndicator="false"
         app:layout_constraintStart_toStartOf="@+id/instructionsTV"
         app:layout_constraintTop_toBottomOf="@+id/instructionsTV" />
 

@@ -10,16 +10,14 @@ public class Company implements Parcelable {
     public String description;
     public String logoImageURL;
     public Double order;
-    public Double stars;
     public String website;
 
-    public Company(String companyID, String name, String description, String logoImageURL, Double order, Double stars, String website){
+    public Company(String companyID, String name, String description, String logoImageURL, Double order, String website){
         this.companyID = companyID;
         this.name = name;
         this.description = description;
         this.logoImageURL = logoImageURL;
         this.order = order;
-        this.stars = stars;
         this.website = website;
     }
 
@@ -34,8 +32,7 @@ public class Company implements Parcelable {
         name = in.readString();
         description = in.readString();
         logoImageURL = in.readString();
-        order = in.readByte() == 0x00 ? null : in.readDouble();
-        stars = in.readByte() == 0x00 ? null : in.readDouble();
+        order = in.readDouble();
         website = in.readString();
     }
 
@@ -50,22 +47,10 @@ public class Company implements Parcelable {
         dest.writeString(name);
         dest.writeString(description);
         dest.writeString(logoImageURL);
-        if (order == null) {
-            dest.writeByte((byte) (0x00));
-        } else {
-            dest.writeByte((byte) (0x01));
-            dest.writeDouble(order);
-        }
-        if (stars == null) {
-            dest.writeByte((byte) (0x00));
-        } else {
-            dest.writeByte((byte) (0x01));
-            dest.writeDouble(stars);
-        }
+        dest.writeDouble(order);
         dest.writeString(website);
     }
 
-    @SuppressWarnings("unused")
     public static final Parcelable.Creator<Company> CREATOR = new Parcelable.Creator<Company>() {
         @Override
         public Company createFromParcel(Parcel in) {
