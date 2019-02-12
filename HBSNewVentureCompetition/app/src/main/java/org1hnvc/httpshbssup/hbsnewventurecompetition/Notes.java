@@ -17,6 +17,7 @@ public class Notes extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.notes);
         setTitle("Notes");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -24,28 +25,27 @@ public class Notes extends AppCompatActivity {
         companyID = b.getString("CompanyID");
 
         notesTV = findViewById(R.id.notesTV);
-        notesTV.setText("TEST", TextView.BufferType.EDITABLE);
 
         fetchNotes();
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if (notesTV.getText() != null){
-//            FirebaseManager.manager.addNotes(companyID, notesTV.getText().toString(), new FirebaseManager.CompletionHandler() {
-//                @Override
-//                public void onSuccess() {}
-//
-//                @Override
-//                public void onError(String error) {
-//                    Toast.makeText(getApplicationContext(), "An error occurred while saving your notes",
-//                            Toast.LENGTH_LONG).show();
-//                }
-//            });
-//        }
-//        finish();
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (notesTV.getText() != null){
+            FirebaseManager.manager.addNotes(companyID, notesTV.getText().toString(), new FirebaseManager.CompletionHandler() {
+                @Override
+                public void onSuccess() {}
+
+                @Override
+                public void onError(String error) {
+                    Toast.makeText(getApplicationContext(), "An error occurred while saving your notes",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        finish();
+        return super.onOptionsItemSelected(item);
+    }
 
     private void fetchNotes(){
         FirebaseManager.manager.fetchNotes(companyID, new FirebaseManager.NotesCallback() {
