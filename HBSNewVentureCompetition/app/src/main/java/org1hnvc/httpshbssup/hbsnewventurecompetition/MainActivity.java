@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
             case R.id.navigation_program:
                 fragment = eventsFragment;
-                title = "Schedule";
+                title = "Program";
                 break;
             case R.id.navigation_judges:
                 fragment = judgesFragment;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
             case R.id.navigation_coordinators:
                 fragment = coordinatorsFragment;
-                title = "Coordinators";
+                title = "Organizers";
                 break;
         }
 

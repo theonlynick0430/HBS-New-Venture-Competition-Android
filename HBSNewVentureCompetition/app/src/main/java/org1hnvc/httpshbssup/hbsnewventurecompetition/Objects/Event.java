@@ -2,7 +2,7 @@ package org1hnvc.httpshbssup.hbsnewventurecompetition.Objects;
 
 import com.google.firebase.*;
 
-public class Event {
+public class Event implements Comparable<Event> {
 
     public String eventID;
     public Timestamp time;
@@ -12,6 +12,12 @@ public class Event {
         this.eventID = eventID;
         this.time = time;
         this.description = description;
+    }
+
+    public int compareTo(Event f) {
+
+        return time.compareTo(f.time);
+
     }
 
 }

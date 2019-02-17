@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters.SponsorAdapter;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase.FirebaseManager;
@@ -61,6 +62,7 @@ public class SponsorsFragment extends Fragment {
         this.sponsors.clear();
         for(Sponsor sponsor: sponsors){
             this.sponsors.add(sponsor);
+            Collections.sort(this.sponsors);
             sponsorAdapter.notifyDataSetChanged();
         }
     }

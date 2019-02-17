@@ -3,7 +3,7 @@ package org1hnvc.httpshbssup.hbsnewventurecompetition.Objects;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Company implements Parcelable {
+public class Company implements Parcelable, Comparable<Company> {
 
     public String companyID;
     public String name;
@@ -19,6 +19,20 @@ public class Company implements Parcelable {
         this.logoImageURL = logoImageURL;
         this.order = order;
         this.website = website;
+    }
+
+    public int compareTo(Company f) {
+
+        if (order > f.order) {
+            return 1;
+        }
+        else if (order < f.order) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+
     }
 
     @Override

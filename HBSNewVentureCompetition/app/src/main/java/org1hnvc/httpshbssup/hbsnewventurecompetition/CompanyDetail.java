@@ -22,6 +22,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters.CompanyMemberAdapter;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase.FirebaseManager;
@@ -145,6 +147,7 @@ public class CompanyDetail extends AppCompatActivity {
         this.companyMembers.clear();
         for(CompanyMember companyMember: companyMembers){
             this.companyMembers.add(companyMember);
+            Collections.sort(this.companyMembers);
             companyMemberAdapter.notifyDataSetChanged();
         }
     }

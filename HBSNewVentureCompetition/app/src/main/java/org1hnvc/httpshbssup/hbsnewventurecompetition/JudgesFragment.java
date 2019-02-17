@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters.JudgeAdapter;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase.FirebaseManager;
@@ -60,6 +61,7 @@ public class JudgesFragment extends Fragment {
         this.judges.clear();
         for(Judge judge: judges){
             this.judges.add(judge);
+            Collections.sort(this.judges);
             judgeAdapter.notifyDataSetChanged();
         }
     }

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters.EventAdapter;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase.FirebaseManager;
@@ -111,6 +112,7 @@ public class EventsFragment extends Fragment {
         this.events.clear();
         for(Event event: events){
             this.events.add(event);
+            Collections.sort(this.events);
             eventAdapter.notifyDataSetChanged();
         }
     }

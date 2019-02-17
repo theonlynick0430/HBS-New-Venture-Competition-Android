@@ -32,6 +32,7 @@ public class NameFile {
             public static String education = "Education";
             public static String position = "Position";
             public static String website = "Website";
+            public static String memberOrder = "Order";
                     //notes <collection>
             public static String notes = "Notes";
                         //note <document> - deviceID
@@ -62,6 +63,7 @@ public class NameFile {
             public static String profileImageURL = "ProfileImageURL";
             public static String linkedInURL = "LinkedInURL";
             public static String description = "Description";
+            public static String order = "Order";
         }
 
         public static class SponsorDB{
@@ -77,6 +79,7 @@ public class NameFile {
             public static String repFirstName = "RepFirstName";
             public static String repLastName = "RepLastName";
             public static String repEmail = "RepEmail";
+            public static String order = "Order";
         }
 
         public static class CoordinatorDB{
@@ -89,6 +92,7 @@ public class NameFile {
             public static String position = "Position";
             public static String organization = "Organization";
             public static String linkedInURL = "LinkedInURL";
+            public static String order = "Order";
         }
 
     }

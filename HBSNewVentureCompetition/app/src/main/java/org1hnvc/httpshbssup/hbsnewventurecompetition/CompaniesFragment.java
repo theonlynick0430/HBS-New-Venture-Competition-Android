@@ -25,6 +25,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters.CompanyAdapter;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase.FirebaseManager;
@@ -196,6 +198,7 @@ public class CompaniesFragment extends Fragment {
         this.companies.clear();
         for(Company company: companies){
             this.companies.add(company);
+            Collections.sort(this.companies);
             companyAdapter.notifyDataSetChanged();
         }
     }

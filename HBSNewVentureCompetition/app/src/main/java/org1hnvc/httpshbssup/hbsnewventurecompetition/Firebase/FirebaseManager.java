@@ -172,7 +172,8 @@ public class FirebaseManager {
                         String linkedInURL = document.getString(NameFile.Firebase.CompanyDB.linkedInURL);
                         String education = document.getString(NameFile.Firebase.CompanyDB.education);
                         String position = document.getString(NameFile.Firebase.CompanyDB.position);
-                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position);
+                        Double order = document.getDouble(NameFile.Firebase.CompanyDB.memberOrder);
+                        CompanyMember companyMember = new CompanyMember(firstName, lastName, profileImageURL, email, phoneNumber, linkedInURL, education, position, order);
                         companyMembers[index] = companyMember;
                         index++;
                     }
@@ -261,7 +262,8 @@ public class FirebaseManager {
                         String profileImageURL = document.getString(NameFile.Firebase.JudgeDB.profileImageURL);
                         String linkedInURL = document.getString(NameFile.Firebase.JudgeDB.linkedInURL);
                         String description = document.getString(NameFile.Firebase.JudgeDB.description);
-                        Judge judge =  new Judge(firstName, lastName, profileImageURL, linkedInURL, description);
+                        Double order = document.getDouble(NameFile.Firebase.JudgeDB.order);
+                        Judge judge =  new Judge(firstName, lastName, profileImageURL, linkedInURL, description, order);
                         judges[index] = judge;
                         index++;
                     }
@@ -291,7 +293,8 @@ public class FirebaseManager {
                         String repFirstName = document.getString(NameFile.Firebase.SponsorDB.repFirstName);
                         String repLastName = document.getString(NameFile.Firebase.SponsorDB.repLastName);
                         String repEmail = document.getString(NameFile.Firebase.SponsorDB.repEmail);
-                        Sponsor sponsor = new Sponsor(name, description, logoImageURL, prize, website, repProfileImageURL, repFirstName, repLastName, repEmail);
+                        Double order = document.getDouble(NameFile.Firebase.SponsorDB.order);
+                        Sponsor sponsor = new Sponsor(name, description, logoImageURL, prize, website, repProfileImageURL, repFirstName, repLastName, repEmail, order);
                         sponsors[index] = sponsor;
                         index++;
                     }
@@ -318,7 +321,8 @@ public class FirebaseManager {
                         String position = document.getString(NameFile.Firebase.CoordinatorDB.position);
                         String organization = document.getString(NameFile.Firebase.CoordinatorDB.organization);
                         String linkedInURL = document.getString(NameFile.Firebase.CoordinatorDB.linkedInURL);
-                        Coordinator coordinator = new Coordinator(firstName, lastName, profileImageURL, position, organization, linkedInURL);
+                        Double order = document.getDouble(NameFile.Firebase.CoordinatorDB.order);
+                        Coordinator coordinator = new Coordinator(firstName, lastName, profileImageURL, position, organization, linkedInURL, order);
                         coordinators[index] = coordinator;
                         index++;
                     }
