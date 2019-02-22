@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/logoImageView"
-        android:layout_width="85dp"
+        android:layout_width="130dp"
         android:layout_height="85dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -40,7 +40,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="8dp"
-        android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+        android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,11 +55,13 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:gravity="left|center_vertical"
         android:paddingLeft="15dip"
         android:paddingRight="15dip"
         android:text="https://www.companyname.com"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/nameTV"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/logoImageView"
@@ -71,11 +73,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
-        android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+        android:text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/descriptionTV"
         app:layout_constraintStart_toStartOf="@+id/descriptionTV"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTV"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/repNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Some kinda long name"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/prizeTV"
+        app:layout_constraintTop_toBottomOf="@+id/prizeTV" />
+
+    <TextView
+        android:id="@+id/repEmailTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="sam@samsmith.com"
+        app:layout_constraintStart_toStartOf="@+id/repNameTV"
+        app:layout_constraintTop_toBottomOf="@+id/repNameTV" />
 
 </android.support.constraint.ConstraintLayout>

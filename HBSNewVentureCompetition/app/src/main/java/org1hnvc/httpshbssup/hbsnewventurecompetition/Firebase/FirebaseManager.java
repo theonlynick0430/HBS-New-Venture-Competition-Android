@@ -289,12 +289,11 @@ public class FirebaseManager {
                         String logoImageURL = document.getString(NameFile.Firebase.SponsorDB.logoImageURL);
                         String prize = document.getString(NameFile.Firebase.SponsorDB.prize);
                         String website = document.getString(NameFile.Firebase.SponsorDB.website);
-                        String repProfileImageURL = document.getString(NameFile.Firebase.SponsorDB.repProfileImageURL);
                         String repFirstName = document.getString(NameFile.Firebase.SponsorDB.repFirstName);
                         String repLastName = document.getString(NameFile.Firebase.SponsorDB.repLastName);
                         String repEmail = document.getString(NameFile.Firebase.SponsorDB.repEmail);
                         Double order = document.getDouble(NameFile.Firebase.SponsorDB.order);
-                        Sponsor sponsor = new Sponsor(name, description, logoImageURL, prize, website, repProfileImageURL, repFirstName, repLastName, repEmail, order);
+                        Sponsor sponsor = new Sponsor(name, description, logoImageURL, prize, website, repFirstName, repLastName, repEmail, order);
                         sponsors[index] = sponsor;
                         index++;
                     }

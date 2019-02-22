@@ -2,6 +2,8 @@ package org1hnvc.httpshbssup.hbsnewventurecompetition.ArrayAdapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -43,6 +45,8 @@ public class SponsorAdapter extends ArrayAdapter<Sponsor> {
         TextView prizeTV = view.findViewById(R.id.prizeTV);
         Button websiteBtn = view.findViewById(R.id.websiteBtn);
         ImageView logoImageView = view.findViewById(R.id.logoImageView);
+        TextView repNameTV = view.findViewById(R.id.repNameTV);
+        TextView repEmailTV = view.findViewById(R.id.repEmailTV);
 
         nameTV.setText(sponsor.name);
         descriptionTV.setText(sponsor.description);
@@ -57,6 +61,10 @@ public class SponsorAdapter extends ArrayAdapter<Sponsor> {
         });
         AsyncImageTask asyncImageTask = new AsyncImageTask(logoImageView);
         asyncImageTask.execute(sponsor.logoImageURL);
+        repNameTV.setText(sponsor.repFirstName + " " + sponsor.repLastName);
+        repNameTV.setTypeface(repNameTV.getTypeface(), Typeface.BOLD);
+        repEmailTV.setText(sponsor.repEmail);
+        repEmailTV.setPaintFlags(repEmailTV.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         return view;
     }

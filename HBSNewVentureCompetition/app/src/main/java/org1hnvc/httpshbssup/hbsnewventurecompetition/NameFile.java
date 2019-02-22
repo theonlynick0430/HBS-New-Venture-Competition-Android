@@ -75,7 +75,6 @@ public class NameFile {
             public static String logoImageURL = "LogoImageURL";
             public static String prize = "Prize";
             public static String website = "Website";
-            public static String repProfileImageURL = "RepProfileImageURL";
             public static String repFirstName = "RepFirstName";
             public static String repLastName = "RepLastName";
             public static String repEmail = "RepEmail";
