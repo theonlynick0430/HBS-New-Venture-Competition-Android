@@ -17,12 +17,25 @@
         android:layout_marginRight="45dp"
         android:layout_marginBottom="15dp"
         android:scrollbars="vertical"
-        android:text="Welcome to the second Northern California &quot;One Harvard&quot; New Venture Competition. On behalf of myself and my co-organizers, we'd like to thank you for coming today and continuing to engage with the Harvard Alumni entrepreneurial community. Today's event was inspired by a visit by the Harvard i-Lab in July 2017 that brought entrepreneurial alumni from all Harvard schools together. We discussed and brainstormed on how we could strengthen the bonds of the Harvard Alumni start-up ecosystem on a local level to help foster meaningful connections between founders, investors, and mentors. We decided to start by opening up the NorCal regional competition for the Global HBS New Venutre Competition to alumni from all Harvard schools; the reponse was incredible.       We received 60 company applicants with over 50% of the applicants coning from non-HBS alumni. We aso garnered nationwide attention from Harvard Aumni from multiple regions applying for our competition. We had the unenviable task of narrowing down the competitors to the 19 you will see today. Company details are provided within.   I would like to personally thank all of our 16 corporate sponsors for contributing to a prize package worth over $400,000 for our competitors. Moreover, a very special thank you to Cooley LLP, our Diamond sponsor, and Ubiquity.vc for allowing us to award cash prizes to our winners.   I invite you to grab some food and drinks, visit the company tables, and most importantly enjoy yourselves. Thank you for coming!  Sincerely,  Maya Krish                                                        "
+        android:text="Welcome to our second annual Northern California One Harvard New Venture Competition (1HNVC). Thank you for coming today and continuing to engage with the broader Harvard Alumni entrepreneurial community.
+
+This year, we received an outstanding lineup of 43 startup applicants with nearly half coming from non-HBS alumni and a handful of Harvard Alumni joining from regions outside the Bay Area. We had the daunting task of narrowing the competitors to the 15 you will see today.
+
+I would like to personally thank all 11 of our corporate sponsors for contributing to a prize package worth over $1 million for our competitors. Moreover, a very special thank you to Cooley LLP, our Premier Legal Sponsor, and Microsoft, our Premier Event Sponsor, for their substantial cash contributions and for hosting our event.
+
+We hope you enjoy this special opportunity to meet tomorrow's best and brightest.  The next time you see these startups, you'll be reading about them in Fast Company. \n This year, we received an outstanding lineup of 43 startup applicants with nearly half coming from non-HBS alumni and a handful of Harvard Alumni joining from regions outside the Bay Area. We had the daunting task of narrowing the competitors to the 15 you will see today.
+\n I would like to personally thank all 11 of our corporate sponsors for contributing to a prize package worth over $1 million for our competitors. Moreover, a very special thank you to Cooley LLP, our Premier Legal Sponsor, and Microsoft, our Premier Event Sponsor, for their substantial cash contributions and for hosting our event.
+\n We hope you enjoy this special opportunity to meet tomorrow's best and brightest.  The next time you see these startups, you'll be reading about them in Fast Company. \n
+Sincerely, \n
+Maya Krish
+2019 1HNVC Chair
+"
         app:layout_constraintBottom_toTopOf="@+id/continueBtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/continueBtn"
