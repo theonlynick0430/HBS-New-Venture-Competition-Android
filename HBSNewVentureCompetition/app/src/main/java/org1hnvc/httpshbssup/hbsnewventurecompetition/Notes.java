@@ -32,7 +32,7 @@ public class Notes extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (notesTV.getText() != null){
-            FirebaseManager.manager.addNotes(companyID, notesTV.getText().toString(), new FirebaseManager.CompletionHandler() {
+            FirebaseManager.manager.addNotes(companyID, notesTV.getText().toString(), getApplicationContext(), new FirebaseManager.CompletionHandler() {
                 @Override
                 public void onSuccess() {}
 
@@ -48,7 +48,7 @@ public class Notes extends AppCompatActivity {
     }
 
     private void fetchNotes(){
-        FirebaseManager.manager.fetchNotes(companyID, new FirebaseManager.NotesCallback() {
+        FirebaseManager.manager.fetchNotes(companyID, getApplicationContext(),  new FirebaseManager.NotesCallback() {
             @Override
             public void onSuccess(String notes) {
                 notesTV.setText(notes);

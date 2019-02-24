@@ -1,5 +1,7 @@
 package org1hnvc.httpshbssup.hbsnewventurecompetition.Firebase;
 
+import android.content.Context;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -10,6 +12,8 @@ import com.google.firebase.firestore.*;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.NameFile;
 import org1hnvc.httpshbssup.hbsnewventurecompetition.Objects.*;
 import android.provider.Settings.Secure;
+import android.telephony.TelephonyManager;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -117,8 +121,8 @@ public class FirebaseManager {
     }
 
     // Fetches the notes of a company taken by this device
-    public void fetchNotes(String companyID, final NotesCallback callback){
-        String android_id = Secure.ANDROID_ID;
+    public void fetchNotes(String companyID, Context context, final NotesCallback callback){
+        String android_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
         companies.document(companyID).collection(NameFile.Firebase.CompanyDB.notes).document(android_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -138,10 +142,10 @@ public class FirebaseManager {
     }
 
     // Adds the notes of a company taken by this device
-    public void addNotes(String companyID, String notes, final CompletionHandler completionHandler){
+    public void addNotes(String companyID, String notes, Context context, final CompletionHandler completionHandler){
         Map<String, Object> notesData = new HashMap<>();
         notesData.put(NameFile.Firebase.CompanyDB.note, notes);
-        String android_id = Secure.ANDROID_ID;
+        String android_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
         companies.document(companyID).collection(NameFile.Firebase.CompanyDB.notes).document(android_id).set(notesData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -186,10 +190,10 @@ public class FirebaseManager {
     }
 
     // Adds a device specific vote to a company
-    public void addVote(String companyID, Double rating, final CompletionHandler completionHandler){
+    public void addVote(String companyID, Double rating, Context context, final CompletionHandler completionHandler){
         Map<String, Object> voteData = new HashMap<>();
         voteData.put(NameFile.Firebase.CompanyDB.stars, rating);
-        String android_id = Secure.ANDROID_ID;
+        String android_id = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
         companies.document(companyID).collection(NameFile.Firebase.CompanyDB.votes).document(android_id).set(voteData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

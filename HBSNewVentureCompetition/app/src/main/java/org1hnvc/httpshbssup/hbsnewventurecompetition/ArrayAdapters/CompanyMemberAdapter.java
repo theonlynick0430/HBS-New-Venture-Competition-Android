@@ -67,7 +67,7 @@ public class CompanyMemberAdapter extends ArrayAdapter<CompanyMember> {
                 view.getContext().startActivity(browserIntent);
             }
         });
-        AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView);
+        AsyncImageTask asyncImageTask = new AsyncImageTask(profileImageView, true);
         asyncImageTask.execute(companyMember.profileImageURL);
 
         return view;

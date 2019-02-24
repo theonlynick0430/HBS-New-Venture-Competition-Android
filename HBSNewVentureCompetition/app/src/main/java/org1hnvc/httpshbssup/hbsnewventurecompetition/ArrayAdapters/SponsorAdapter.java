@@ -51,6 +51,7 @@ public class SponsorAdapter extends ArrayAdapter<Sponsor> {
         nameTV.setText(sponsor.name);
         descriptionTV.setText(sponsor.description);
         prizeTV.setText(sponsor.prize);
+        websiteBtn.setText(sponsor.website);
         websiteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

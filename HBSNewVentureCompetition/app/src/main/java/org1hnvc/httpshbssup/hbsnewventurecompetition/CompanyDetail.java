@@ -67,7 +67,7 @@ public class CompanyDetail extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Voting is not enabled on this device. To enable it, go to the the startups tab, click the Vote button in the upper right hand corner, and enter the event code.",
                                 Toast.LENGTH_LONG).show();
                     }else{
-                        FirebaseManager.manager.addVote(company.companyID, (double) v, new FirebaseManager.CompletionHandler() {
+                        FirebaseManager.manager.addVote(company.companyID, (double) v, getApplicationContext(), new FirebaseManager.CompletionHandler() {
                             @Override
                             public void onSuccess() {}
 
@@ -108,7 +108,7 @@ public class CompanyDetail extends AppCompatActivity {
 
     private void fetchRating(){
         CollectionReference companies = FirebaseFirestore.getInstance().collection(NameFile.Firebase.CompanyDB.companies);
-        String android_id = Settings.Secure.ANDROID_ID;
+        String android_id = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         companies.document(company.companyID).collection(NameFile.Firebase.CompanyDB.votes).document(android_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
