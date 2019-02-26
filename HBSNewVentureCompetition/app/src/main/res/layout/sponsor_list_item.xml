@@ -55,15 +55,11 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:gravity="left|center_vertical"
         android:paddingLeft="15dip"
         android:paddingRight="15dip"
-        android:text="https://www.companyname.com"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/nameTV"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:text="Visit website"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/logoImageView"
         app:layout_constraintTop_toBottomOf="@+id/nameTV" />
 

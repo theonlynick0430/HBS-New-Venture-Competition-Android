@@ -75,7 +75,6 @@ public class EventsFragment extends Fragment {
                                 public void run() {
                                     listView.requestFocusFromTouch();
                                     listView.setSelection(i);
-                                    listView.setChoiceMode(ListView.CHOICE_MODE_NONE);
                                 }
                             });
                             break;

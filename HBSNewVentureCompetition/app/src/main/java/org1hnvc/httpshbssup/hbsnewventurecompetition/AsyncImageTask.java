@@ -15,8 +15,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AsyncImageTask{
+
+    public static Map<String, Bitmap> imageCache = new HashMap<String, Bitmap>();
 
     private FirebaseStorage storage = FirebaseStorage.getInstance();
     private final WeakReference<ImageView> imageViewReference;
@@ -47,7 +51,19 @@ public class AsyncImageTask{
         this.isRounded = false;
     }
 
-    public void execute(String url) {
+    public void execute(final String url) {
+
+        if (imageCache.containsKey(url)){
+            System.out.println("Hereee");
+            ImageView imageView = imageViewReference.get();
+            if (isRounded){
+                imageView.setImageBitmap(getCircleBitmap(imageCache.get(url)));
+            }else{
+                imageView.setImageBitmap(imageCache.get(url));
+            }
+            return;
+        }
+
         if (imageViewReference != null && placeholder != null) {
             ImageView imageView = imageViewReference.get();
             if (imageView != null) {
@@ -63,6 +79,7 @@ public class AsyncImageTask{
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 if (imageViewReference != null && bitmap != null) {
                     ImageView imageView = imageViewReference.get();
+                    imageCache.put(url, bitmap);
                     if (imageView != null) {
                         if (isRounded){
                             imageView.setImageBitmap(getCircleBitmap(bitmap));
