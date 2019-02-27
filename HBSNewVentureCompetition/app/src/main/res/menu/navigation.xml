@@ -24,6 +24,6 @@
     <item
         android:id="@+id/navigation_coordinators"
         android:icon="@drawable/coordinators_icon"
-        android:title="Coordinators" />
+        android:title="Organizers" />
 
 </menu>
