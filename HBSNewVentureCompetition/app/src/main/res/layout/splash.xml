@@ -17,18 +17,16 @@
         android:layout_marginRight="45dp"
         android:layout_marginBottom="15dp"
         android:scrollbars="vertical"
-        android:text="Welcome to our second annual Northern California One Harvard New Venture Competition (1HNVC). Thank you for coming today and continuing to engage with the broader Harvard Alumni entrepreneurial community.
+        android:text="Welcome to our third annual Northern California One Harvard New Venture Competition (1HNVC). Thank you for coming today and continuing to engage with the broader Harvard Alumni entrepreneurial community.
 
-This year, we received an outstanding lineup of 43 startup applicants with nearly half coming from non-HBS alumni and a handful of Harvard Alumni joining from regions outside the Bay Area. We had the daunting task of narrowing the competitors to the 15 you will see today.
+This year, we received an outstanding lineup of 40 startup applicants with nearly half coming from non-HBS alumni and a handful of Harvard Alumni joining from regions outside the Bay Area. We had the daunting task of narrowing the competitors to the 12 you will see today.
 
-I would like to personally thank all 11 of our corporate sponsors for contributing to a prize package worth over $1 million for our competitors. Moreover, a very special thank you to Cooley LLP, our Premier Legal Sponsor, and Microsoft, our Premier Event Sponsor, for their substantial cash contributions and for hosting our event.
+I would like to personally thank all of our corporate sponsors for their generous prize contributions to our competitors. Moreover, a very special thank you to Cooley LLP for their substantial cash contribution and UCSF for hosting our event.
 
-We hope you enjoy this special opportunity to meet tomorrow's best and brightest.  The next time you see these startups, you'll be reading about them in Fast Company. \n This year, we received an outstanding lineup of 43 startup applicants with nearly half coming from non-HBS alumni and a handful of Harvard Alumni joining from regions outside the Bay Area. We had the daunting task of narrowing the competitors to the 15 you will see today.
-\n I would like to personally thank all 11 of our corporate sponsors for contributing to a prize package worth over $1 million for our competitors. Moreover, a very special thank you to Cooley LLP, our Premier Legal Sponsor, and Microsoft, our Premier Event Sponsor, for their substantial cash contributions and for hosting our event.
-\n We hope you enjoy this special opportunity to meet tomorrow's best and brightest.  The next time you see these startups, you'll be reading about them in Fast Company. \n
-Sincerely, \n
+We hope you enjoy this special opportunity to meet tomorrow's best and brightest. The next time you see these startups, you'll be reading about them in Fast Company. \n
+Sincerely,
 Maya Krish
-2019 1HNVC Chair
+2020 HBSANC Director of Entrepreneurship
 "
         app:layout_constraintBottom_toTopOf="@+id/continueBtn"
         app:layout_constraintEnd_toEndOf="parent"
